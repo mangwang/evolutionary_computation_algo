@@ -19,12 +19,12 @@ global initial_flag; % the global flag used in test suite
 
 for func_num = 1:3
 
-   % set the lower and upper bound for each function
-      if (func_num == 1 | func_num == 3 )
+    % set the lower and upper bound for each function
+    if (func_num == 1 || func_num == 3)
         lb = -100;
         ub = 100;
     end
-    if (func_num == 2 )
+    if (func_num == 2)
         lb = -100;
         ub = 100;
     end
@@ -33,12 +33,12 @@ for func_num = 1:3
        
       initial_flag = 0; % should set the flag to 0 for each run, each function
       pop = lb + (ub-lb)*rand(NP, D);
-      val = benchmark_func(pop, func_num,run); % fitness evaluation
+      val = benchmark_func(pop, func_num, run); % fitness evaluation
 
       iter=1;
       [gval(iter),index]=min(val);
       g_best=pop(index,:);
-      save(['实验结果\best_DE\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+      save(['result\best_DE\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
       while (iter <= Max_iter-1)
          % random search, you should add your own method
          for i=1:NP
