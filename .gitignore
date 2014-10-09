@@ -1,0 +1,6 @@
+# Ignore file folders
+cauchy/
+datafiles/
+javarandom/
+# Ingnore all ,jpg file
+*.jpg
