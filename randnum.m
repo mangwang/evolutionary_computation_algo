@@ -1,14 +1,14 @@
-% ç”Ÿæˆ1000ç»´éšæœºå‘é‡
+% Éú³ÉËæ»úÊı
 
 clear;clc;
 
 for i=1:20
-
-	o = rand(1,1000).*200 - 100;
-	save(['datafiles\', num2str(i),'\f01_o.mat'], 'o');
-	o = rand(1,1000).*10 - 5;
-	save(['datafiles\', num2str(i),'\f02_o.mat'],'o');
-	o = rand(1,1000).*200 - 100;
-	save(['datafiles\', num2str(i),'\f03_o.mat'], 'o');
-
+    
+    o = rand(1,1000).*200 - 100;
+    save(['datafiles\', num2str(i),'\f01_o.mat'], 'o');
+    o = rand(1,1000).*10 - 5;
+    save(['datafiles\', num2str(i),'\f02_o.mat'],'o');
+    o = rand(1,1000).*200 - 100;
+    save(['datafiles\', num2str(i),'\f03_o.mat'], 'o');
+    
 end
