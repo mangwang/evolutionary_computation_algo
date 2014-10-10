@@ -3,5 +3,7 @@ cauchy/
 datafiles/
 javarandom/
 result/
+# Do not ignore randnum.m in datafiles folder
+!datafiles/randnum.m
 # Ingnore all ,jpg file
 *.jpg
