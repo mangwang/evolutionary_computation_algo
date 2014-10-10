@@ -8,7 +8,7 @@
 
 %----------------------------------------------------------------------
 
-clear;
+clear;clc;
 
 D = 30; % dimensionality of benchmark functions
 NP =100; % population size
@@ -94,7 +94,7 @@ for func_num = 1:3
         
         % Gvalue(func_num,run)=gval(iter);
         % semilogy(1:iter,gval);      % ’¡≤«˙œﬂÕº
-        fprintf(1, 'run_num = %d\n', run);
+        fprintf(1, 'fun_num = %d, run_num = %d\n', func_num, run);
     end
 end
 

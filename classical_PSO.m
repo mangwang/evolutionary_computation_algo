@@ -6,11 +6,11 @@
 
 
 %----------------------------------------------------------------------
-clear;
+clear;clc;
 
 D = 30; % dimensionality of benchmark functions
 NP = 100; % population size
-runs = 1; % number of independent runs for each function, should be set to 25
+runs = 20; % number of independent runs for each function, should be set to 25
 Max_iter = 2000; % maximal number of FEs, should be set to 3e+06
 global initial_flag; % the global flag used in test suite
 
@@ -84,7 +84,7 @@ for func_num =1:3
 %             fprintf(1, 'func_num = %d, run = %d,iter = %d\n', func_num, run,iter);
 %             fprintf(1, 'min(val) = %g\n\n', g_val);
         end
-        fprintf(1, 'run_num = %d\n', run);
+        fprintf(1, 'fun_num = %d, run_num = %d\n', func_num, run);
     end
     
 end

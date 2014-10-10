@@ -7,7 +7,7 @@
 
 
 %----------------------------------------------------------------------
-clear;
+clear;clc;
 
 D = 30; % dimensionality of benchmark functions
 NP = 100; % population size
@@ -142,7 +142,7 @@ for func_num =2:3%:20
 %             fprintf(1, 'func_num = %d, run = %d, iter = %d\n', func_num, run, iter);
 %             fprintf(1, 'min(val) = %g\n\n', g_val);
         end
-        fprintf(1, 'run_num = %d\n', run);
+        fprintf(1, 'fun_num = %d, run_num = %d\n', func_num, run);
         
     end
     
