@@ -13,26 +13,26 @@ if (initial_flag == 0)
         ub = 100;
     end
     
-    if (func_num ==  1)
+    if (func_num == 1)
         fhd = str2func('sphere_shift_func');
-    elseif (func_num ==  2)
+    elseif (func_num == 2)
         fhd = str2func('rastrigin_shift_func');
-    elseif (func_num ==  3)
-        fhd = str2func('rosenbrock_shift_func'); 
+    elseif (func_num == 3)
+        fhd = str2func('rosenbrock_shift_func');
     end
     
-	jrandflag = 0;
+    jrandflag = 0;  % Set to 1 if want to change the random number
     
-	if (jrandflag == 1)
-		jrand = Randomizer(func_num);
-	end
+    if (jrandflag == 1)
+        jrand = Randomizer(func_num);
+    end
 end
 
 fit = feval(fhd, x, run);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Sphere Function 
+% Sphere Function
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function fit = sphere_func(x)
 
@@ -69,12 +69,12 @@ if (initial_flag == 0)
     if (jrandflag == 1)
         o = jrand.createShiftVector(D, lb, ub);
         o = o';
-		save(['datafiles\', num2str(1),'\f01_o.mat'], 'o');
+        save(['datafiles\', num2str(1),'\f01_o.mat'], 'o');
     else
-		load(['datafiles\', num2str(1),'\f01_o.mat']);
-		o = o(1:D);
+        load(['datafiles\', num2str(1),'\f01_o.mat']);
+        o = o(1:D);
     end
-	initial_flag = 1;
+    initial_flag = 1;
 end
 
 x = x - repmat(o,ps,1);
@@ -94,12 +94,12 @@ if (initial_flag == 0)
     if (jrandflag == 1)
         o = jrand.createShiftVector(D, lb, ub);
         o = o';
-		save(['datafiles\',num2str(1),'\f02_o.mat'], 'o');
+        save(['datafiles\',num2str(1),'\f02_o.mat'], 'o');
     else
-		load(['datafiles\',num2str(1),'\f02_o.mat']);
-		o = o(1:D);
+        load(['datafiles\',num2str(1),'\f02_o.mat']);
+        o = o(1:D);
     end
-	initial_flag = 1;
+    initial_flag = 1;
 end
 
 x = x - repmat(o,ps,1);
@@ -119,13 +119,13 @@ if (initial_flag == 0)
     if (jrandflag == 1)
         o = jrand.createShiftVector(D, lb, ub-1);
         o = o';
-		save(['datafiles\',num2str(1),'\f03_o.mat'], 'o');
+        save(['datafiles\',num2str(1),'\f03_o.mat'], 'o');
     else
-		load(['datafiles\',num2str(1),'\f03_o.mat']);
+        load(['datafiles\',num2str(1),'\f03_o.mat']);
         o = o(1:D);
     end
-   
-	initial_flag = 1;
+    
+    initial_flag = 1;
 end
 
 x = x - repmat(o,ps,1);
