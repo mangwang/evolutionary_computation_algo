@@ -38,7 +38,13 @@ for func_num = 1:3
         iter = 1;
         [gval(iter), index] = min(val);
         g_best = pop(index,:);
-        save(['result\best_DE\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+        
+        % Add savePath to save results
+        savePath = 'result\best_DE';
+        if ~isdir(savePath)
+            mkdir(savePath);
+        end
+		save([savePath, filesep, num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val');
         
         while (iter <= Max_iter - 1)
             % random search, you should add your own method
@@ -79,11 +85,11 @@ for func_num = 1:3
             g_best = pop(index,:);
             
             %------------------------保存每一代的种群和适应度---------------------------
-            save(['result\best_DE\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+            save(['result\best_DE\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val');
             
             % demo output, you should save your results to some files
-%             fprintf(1, 'func_num = %d, run = %d, iter = %d\n', func_num, run, iter);
-%             fprintf(1, 'gval(iter) = %g\n\n', gval(iter));
+            %             fprintf(1, 'func_num = %d, run = %d, iter = %d\n', func_num, run, iter);
+            %             fprintf(1, 'gval(iter) = %g\n\n', gval(iter));
         end
         
         % Gvalue(func_num,run)=gval(iter);

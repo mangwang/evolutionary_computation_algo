@@ -50,7 +50,12 @@ for func_num = 1:3
         
         pc=0.05+0.45*(exp(10*((1:NP)-1)/(NP-1))-1)/(exp(10)-1);  % 计算学习概率
         
-        save(['result\CLPSO\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+        % Add savePath to save results
+        savePath = 'result\CLPSO';
+        if ~isdir(savePath)
+            mkdir(savePath);
+        end
+		save([savePath, filesep, num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val');
         
         while (iter <= Max_iter-1)
             
@@ -136,7 +141,7 @@ for func_num = 1:3
             
             %------------------------保存每一代的种群和适应度---------------------------
             
-            save(['result\CLPSO\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+            save(['result\CLPSO\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val');
             
             % demo output, you should save your results to some files
 %             fprintf(1, 'func_num = %d, run = %d, iter = %d\n', func_num, run, iter);

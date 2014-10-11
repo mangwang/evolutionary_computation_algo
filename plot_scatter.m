@@ -8,8 +8,8 @@ for func_num=1:3
         ub = 100;
     end
     if (func_num == 2 )
-        lb = -5;
-        ub = 5;
+        lb = -100;
+        ub = 100;
     end
     
     for iter=[1 10 20 30 40 50 60 70 80 90 100 500 1000 1500 2000]
@@ -19,6 +19,12 @@ for func_num=1:3
         xlim([lb ub]);
         ylim([lb ub]);
         zlim([lb ub]);
+		
+		% Add savePath to save results
+        savePath = 'result\pics\NSDE';
+        if ~isdir(savePath)
+			mkdir(savePath);
+        end
         saveas(1,['result\pics\NSDE\',num2str(func_num),'_',num2str(iter),'.jpg']);  %±£´æ»æpics
     end
 end
@@ -32,8 +38,8 @@ for func_num=1:3
         ub = 100;
     end
     if (func_num == 2 )
-        lb = -5;
-        ub = 5;
+        lb = -100;
+        ub = 100;
     end
     
     for iter=[1 10 20 30 40 50 60 70 80 90 100 500 1000 1500 2000]
@@ -43,6 +49,11 @@ for func_num=1:3
         xlim([lb ub]);
         ylim([lb ub]);
         zlim([lb ub]);
+		% Add savePath to save results
+		savePath = 'result\pics\best_DE';
+        if ~isdir(savePath)
+			mkdir(savePath);
+        end
         saveas(1,['result\pics\best_DE\',num2str(func_num),'_',num2str(iter),'.jpg']);  %±£´æ»æpics
     end
 end
@@ -55,8 +66,8 @@ for func_num=1:3
         ub = 100;
     end
     if (func_num == 2 )
-        lb = -5;
-        ub = 5;
+        lb = -100;
+        ub = 100;
     end
     
     for iter=[1 10 20 30 40 50 60 70 80 90 100 500 1000 1500 2000]
@@ -66,6 +77,11 @@ for func_num=1:3
         xlim([lb ub]);
         ylim([lb ub]);
         zlim([lb ub]);
+		% Add savePath to save results
+		savePath = 'result\pics\classical_DE';
+        if ~isdir(savePath)
+			mkdir(savePath);
+        end
         saveas(1,['result\pics\classical_DE\',num2str(func_num),'_',num2str(iter),'.jpg']);  %±£´æ»æpics
     end
 end
@@ -79,8 +95,8 @@ for func_num=1:3
         ub = 100;
     end
     if (func_num == 2 )
-        lb = -5;
-        ub = 5;
+        lb = -100;
+        ub = 100;
     end
     
     for iter=[1 10 20 30 40 50 60 70 80 90 100 500 1000 1500 2000]
@@ -90,6 +106,11 @@ for func_num=1:3
         xlim([lb ub]);
         ylim([lb ub]);
         zlim([lb ub]);
+		% Add savePath to save results
+		savePath = 'result\pics\classical_PSO';
+        if ~isdir(savePath)
+			mkdir(savePath);
+        end
         saveas(1,['result\pics\classical_PSO\',num2str(func_num),'_',num2str(iter),'.jpg']);  %±£´æ»æpics
     end
 end
@@ -103,8 +124,8 @@ for func_num=1:3
         ub = 100;
     end
     if (func_num == 2 )
-        lb = -5;
-        ub = 5;
+        lb = -100;
+        ub = 100;
     end
     
     for iter=[1 10 20 30 40 50 60 70 80 90 100 500 1000 1500 2000]
@@ -114,6 +135,11 @@ for func_num=1:3
         xlim([lb ub]);
         ylim([lb ub]);
         zlim([lb ub]);
+		% Add savePath to save results
+		savePath = 'result\pics\CLPSO';
+        if ~isdir(savePath)
+			mkdir(savePath);
+        end
         saveas(1,['result\pics\CLPSO\',num2str(func_num),'_',num2str(iter),'.jpg']);  %±£´æ»æpics
     end
 end

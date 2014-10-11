@@ -44,7 +44,13 @@ for func_num =1:3
         
         gval(iter)=g_val;
         
-        save(['result\classical_PSO\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+        % Add savePath to save results
+        savePath = 'result\classical_PSO';
+        if ~isdir(savePath)
+            mkdir(savePath);
+        end
+		save([savePath, filesep, num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val');
+        
         while (iter <= Max_iter-1)
             
             for i=1:NP
@@ -78,7 +84,7 @@ for func_num =1:3
             gval(iter)=g_val;
             %------------------------保存每一代的种群和适应度---------------------------
             
-            save(['result\classical_PSO\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val') ;
+            save(['result\classical_PSO\',num2str(func_num),'_',num2str(run),'_',num2str(iter)],'pop','val');
             
             % demo output, you should save your results to some files
 %             fprintf(1, 'func_num = %d, run = %d,iter = %d\n', func_num, run,iter);

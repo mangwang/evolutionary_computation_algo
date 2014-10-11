@@ -2,6 +2,11 @@
 
 clear;clc;
 
+savePath = 'datafiles';
+if ~isdir(savePath)
+	mkdir(savePath);
+end
+
 for i=1:20
     
     o = rand(1,1000).*200 - 100;
