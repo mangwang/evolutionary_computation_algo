@@ -4,3 +4,4 @@ javarandom/
 result/
 # Ingnore all ,jpg file
 *.jpg
+*.asv
