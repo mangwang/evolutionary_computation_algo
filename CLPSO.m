@@ -15,7 +15,7 @@ runs = 20; % number of independent runs for each function, should be set to 25
 Max_iter = 2000; % maximal number of FEs, should be set to 3e+06
 global initial_flag; % the global flag used in test suite
 
-for func_num =2:3%:20
+for func_num = 1:3
     
     % set the lower and upper bound for each function
     if (func_num == 1 || func_num == 3 )
